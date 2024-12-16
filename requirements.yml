@@ -1,5 +1,5 @@
 ---
 collections:
-  - name: https://opendev.org/openstack/ansible-collection-kolla
+  - name: https://github.com/Pinakastra-Computing/pinaka-ansible-collection
     type: git
     version: stable/2023.1
