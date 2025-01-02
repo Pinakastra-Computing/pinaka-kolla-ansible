@@ -17,8 +17,8 @@ node_config_directory: "/etc/kolla"
 
 # The group which own node_config_directory, you can use a non-root
 # user to deploy kolla
-config_owner_user: "root"
-config_owner_group: "root"
+config_owner_user: "pinaka"
+config_owner_group: "pinaka"
 
 ###################
 # Ansible options
@@ -336,7 +336,7 @@ gnocchi_external_fqdn: "{{ kolla_external_fqdn }}"
 gnocchi_api_port: "8041"
 gnocchi_api_listen_port: "{{ gnocchi_api_port }}"
 
-grafana_server_port: "3000"
+grafana_server_port: "7000"
 
 haproxy_stats_port: "1984"
 haproxy_monitor_port: "61313"
@@ -350,7 +350,7 @@ heat_cfn_external_fqdn: "{{ kolla_external_fqdn }}"
 heat_api_cfn_port: "8000"
 heat_api_cfn_listen_port: "{{ heat_api_cfn_port }}"
 
-horizon_port: "80"
+horizon_port: "9999"
 horizon_tls_port: "443"
 horizon_listen_port: "{{ horizon_tls_port if horizon_enable_tls_backend | bool else horizon_port }}"
 
@@ -471,31 +471,31 @@ placement_external_fqdn: "{{ kolla_external_fqdn }}"
 placement_api_port: "8780"
 placement_api_listen_port: "{{ placement_api_port }}"
 
-prometheus_port: "9091"
-prometheus_node_exporter_port: "9100"
-prometheus_mysqld_exporter_port: "9104"
-prometheus_haproxy_exporter_port: "9101"
-prometheus_memcached_exporter_port: "9150"
+prometheus_port: "7090"
+prometheus_node_exporter_port: "7091"
+prometheus_mysqld_exporter_port: "7092"
+prometheus_haproxy_exporter_port: "7093"
+prometheus_memcached_exporter_port: "7094"
 prometheus_rabbitmq_exporter_port: "{{ rabbitmq_prometheus_port }}"
 # Default cadvisor port of 8080 already in use
-prometheus_cadvisor_port: "18080"
-prometheus_fluentd_integration_port: "24231"
-prometheus_libvirt_exporter_port: "9177"
+prometheus_cadvisor_port: "7095"
+prometheus_fluentd_integration_port: "7096"
+prometheus_libvirt_exporter_port: "7097"
 prometheus_etcd_integration_port: "{{ etcd_client_port }}"
 
 # Prometheus alertmanager ports
-prometheus_alertmanager_port: "9093"
-prometheus_alertmanager_cluster_port: "9094"
+prometheus_alertmanager_port: "7098"
+prometheus_alertmanager_cluster_port: "7099"
 
 # Prometheus MSTeams port
-prometheus_msteams_port: "9095"
+prometheus_msteams_port: "7100"
 
 # Prometheus openstack-exporter ports
-prometheus_openstack_exporter_port: "9198"
-prometheus_elasticsearch_exporter_port: "9108"
+prometheus_openstack_exporter_port: "7101"
+prometheus_elasticsearch_exporter_port: "7102"
 
 # Prometheus blackbox-exporter ports
-prometheus_blackbox_exporter_port: "9115"
+prometheus_blackbox_exporter_port: "7103"
 
 proxysql_admin_port: "6032"
 
@@ -519,7 +519,7 @@ skyline_internal_fqdn: "{{ kolla_internal_fqdn }}"
 skyline_external_fqdn: "{{ kolla_external_fqdn }}"
 skyline_apiserver_port: "9998"
 skyline_apiserver_listen_port: "{{ skyline_apiserver_port }}"
-skyline_console_port: "9999"
+skyline_console_port: "80"
 skyline_console_listen_port: "{{ skyline_console_port }}"
 
 solum_application_deployment_port: "9777"
